@@ -1,0 +1,26 @@
+hi, {{ .veri }}
+
+
+döngüler
+
+
+sayilar:
+
+{{ range $index,$value := .sayilar }}
+{{ $index }} --//-- {{ $value }}
+{{ end }}
+
+
+if else
+
+
+{{ if .is_admin }}
+    ADMIN
+{{ else }}
+    ADMIN DEGIL
+{{ end }}
+
+
+{{ if eq .sayi 10}}
+    sayi 10'a eşit
+{{ end }}
