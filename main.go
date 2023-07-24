@@ -44,6 +44,15 @@ func get(w http.ResponseWriter, r *http.Request) {
 	
 	view, _ := template.ParseFiles(("get.html"))
 
-	view.Execute(w, nil)
+	data := make(map[string]interface{})
+	data["veri"] = "user"
+	data["veri2"] = "user2"
+	data["sayilar"] = []int{1,2,3,4,5}
+	data["is_admin"] = true
+	data["sayi"] = 10
+
+
+
+	view.Execute(w, data)
 	
 }
