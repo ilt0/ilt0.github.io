@@ -9,6 +9,7 @@ import (
 func main() {
 	// http.Handle("/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/", home)
+	http.HandleFunc("/home", home)
 	http.ListenAndServe(":80", nil)
 }
 
@@ -35,5 +36,14 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 
 	view.Execute(w, data)
+	
+}
+
+
+func get(w http.ResponseWriter, r *http.Request) {
+	
+	view, _ := template.ParseFiles(("get.html"))
+
+	view.Execute(w, nil)
 	
 }
