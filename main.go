@@ -9,7 +9,7 @@ import (
 func main() {
 	// http.Handle("/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/", home)
-	http.HandleFunc("/home", home)
+	http.HandleFunc("/get", get)
 	http.ListenAndServe(":80", nil)
 }
 
